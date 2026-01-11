@@ -20,4 +20,6 @@ node_modules/
 # Temporary files
 *. tmp
 *.cache
+
 2026/data/messages.json
+2026/data/

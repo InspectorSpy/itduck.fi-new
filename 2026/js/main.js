@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener("click", function() {
-            navMenu.classList.toggle("actove");
+            navMenu.classList.toggle("active");
 
             // Animate hamburger icon
             this.classList.toggle("active");
@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Close menu when clicking outside
         document.addEventListener("click", function(event) {
-            const isClickInside = navMenu.contains(event.targer);
-            const isCLickOnToggle = mobileMenuToggle.contains(event.target);
+            const isClickInside = navMenu.contains(event.target);
+            const isClickOnToggle = mobileMenuToggle.contains(event.target);
 
-            if (!isClickInside && !isCLickOnToggle && navMenu.classList.contains("active")) {
+            if (!isClickInside && !isClickOnToggle && navMenu.classList.contains("active")) {
                 navMenu.classList.remove("active");
                 mobileMenuToggle.classList.remove("active");
             }

@@ -39,21 +39,23 @@ $messages = array_reverse($messages);
 <html lang="en">
     <?php include __DIR__ . "/inc/head.inc.php"; ?>
 
-    <body class="container" style="padding: 40px 20px;">
-        <h1>Contact messages (<?php echo count($messages); ?>)</h1>
+    <body>
+        <div class="container" style="padding: 40px 20px;">
+            <h1>Contact messages (<?php echo count($messages); ?>)</h1>
 
-        <?php if (empty($messages)): ?>
-            <p>No messages yet.</p>
-            <?php else: ?>
+            <?php if (empty($messages)): ?>
+                <p>No messages yet. </p>
+            <?php else:  ?>
                 <?php foreach ($messages as $msg): ?>
-                    <div style="background: var(--bg-secondary); padding: 20px margin: 20px 0; border-radius: 8px; border-left: 4px solid var(--yellow);">
-                        <p><strong>From:</strong> <?php echo htmlspecialchars($msg["name"]); ?></p>
+                    <div style="background: var(--bg-secondary); padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid var(--yellow);">
+                        <p><strong>From: </strong> <?php echo htmlspecialchars($msg["name"]); ?></p>
                         <p><strong>Email:</strong> <a href="mailto:<?php echo htmlspecialchars($msg["email"]); ?>"><?php echo htmlspecialchars($msg["email"]); ?></a></p>
                         <p><strong>Date:</strong> <?php echo htmlspecialchars($msg["timestamp"]); ?></p>
                         <p><strong>Message:</strong></p>
                         <p><?php echo nl2br(htmlspecialchars($msg["message"])); ?></p>
                     </div>
                 <?php endforeach; ?>
-        <?php endif; ?>
+            <?php endif; ?>
+        </div>
     </body>
 </html>

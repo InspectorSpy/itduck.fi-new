@@ -374,51 +374,79 @@
     }
 
     .btn-primary {
-        background-color: var(--primary-color);
-        color: white;
+        background-color: var(--yellow);
+        color: var(--darker-gray);
+        padding: 12px 30px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
     }
 
     .btn-primary:hover {
         background-color: var(--secondary-color);
         transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
     }
 
 /*  ==========================================
     FORMS
     ========================================== */
 
+    /* Alert messages */
+    .alert {
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        font-weight: 500;
+    }
+
+    .alert-success {
+        background-color: rgba(90, 186, 71, 0.2);
+        border: 1px solid var(--success-color);
+        color: var(--success-color);
+    }
+
+    .alert-error {
+        background-color: rgba(201, 33, 39, 0.2);
+        border: 1px solid var(--error-color);
+        color: var(--error-color);
+    }
+
     .contact-form {
         max-width: 600px;
         margin: 0 auto;
     }
 
-    .from-group {
+    .form-group {
         margin-bottom: 20px;
+        text-align: left;
     }
 
     .form-group label {
         display: block;
         margin-bottom: 8px;
-        font-weight: 600;
-        color: var(--text-color);
+        color: var(--yellow);
+        font-weight: 500;
     }
 
-    .from-group input,
+    .form-group input,
     .form-group textarea {
         width: 100%;
         padding: 12px;
+        background-color: var(--bg-secondary);
         border: 1px solid var(--border-color);
         border-radius: 6px;
-        font-size: 1rem;
+        color: var(--text-color);
         font-family: inherit;
-        transition: border-color 0.3s ease;
+        font-size: 16px;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
         outline: none;
-        border-color: var(--primary-color);
+        border-color: var(--yellow);
     }
 
     .form-group textarea {

@@ -2,6 +2,49 @@
 $current_navi_item = "contact";
 $page_title = "Contact - " . (defined("SITE_NAME") ? SITE_NAME : "IT Duck");
 $header_title = "Get In Touch";
+
+$success_message ="";
+$error_message = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Validate inputs
+    $name = htmlspecialchars(trim($_POST["name"] ?? ""));
+    $email = htmlspecialchars(trim($_POST["email"] ?? ""));
+    $message = htmlspecialchars(trim($_POST["message"] ?? ""));
+
+    if (!empty($name) && !empty($email) && !empty($message)) {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // Create data directory if it doesn't exist
+            $data_dir = __DIR__ . "/data";
+            if (!file_exists($data_dir)) {
+                mkdir($data_dir, 0755, true);
+            }
+
+            // Prepare message data
+            $message_data = [
+                "timestamp" => date("Y-m-d H:i:s"),
+                "name"=> $name,
+                "email"=> $email,
+                "message"=> $message
+            ];
+
+            // Load existing messages
+            $message_file = $data_dir . "/messages.json";
+            $messages = [];
+            if (file_put_contents($message_file, json_encode($messages, JSON_PRETTY_PRINT))) {
+                $success_message = "Thank you! Your message has been sent successfully.";
+                // Clear form
+                $_POST = [];
+            } else {
+                $error_message = "Sorry, there was an error saving your message, Please try again.";
+            }
+        } else {
+            $error_message = "Please enter a valid email address.";
+        }
+    } else {
+        $error_message = "Please fill in all fields.";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,23 +65,35 @@ $header_title = "Get In Touch";
 
             <section class="content-section">
                 <h2>Send me a message</h2>
+                <?php if ($success_message): ?>
+                    <div class="alert alert-success">
+                        <?php echo $success_message; ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($error_message): ?>
+                    <div class="alert alert-error">
+                        <?php echo $error_message; ?>
+                    </div>
+                <?php endif; ?>
+
                 <form class="contact-form" method="post" action="">
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($_POST["name"] ?? ""); ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($_POST["email"] ?? ""); ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="5" required><?php echo htmlspecialchars($_POST["message"] ?? ""); ?></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn-primary">Send Message</button>
                 </form>
             </section>
         </div>

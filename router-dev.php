@@ -19,7 +19,7 @@ if (preg_match("#^/$folder/(css|js|img|fonts|videos)(/.*)?$#", $path)) {
 }
 
 // Page rewrites for pretty URLs
-$pages = ['about', 'contact', 'services', 'portfolio'];
+$pages = ['about', 'contact', 'services', 'portfolio', 'view-messages'];
 
 foreach ($pages as $page) {
     if ($path === "/$folder/$page" || $path === "/$page") {

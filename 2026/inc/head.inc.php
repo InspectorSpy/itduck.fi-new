@@ -10,8 +10,8 @@ if (!isset($page_title)) {
 }
 ?>
 <head>
-    <meata charset="UTF-8">
-    <meta name="viewport" content=""width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo isset($page_description) ? $page_description : 'Welcome to ' . SITE_NAME; ?>">
 
     <title><?php echo $page_title; ?></title>

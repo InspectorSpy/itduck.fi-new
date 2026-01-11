@@ -1,4 +1,5 @@
 <?php
+
 $current_navi_item = "contact";
 $page_title = "Contact - " . (defined("SITE_NAME") ? SITE_NAME : "IT Duck");
 $header_title = "Get In Touch";

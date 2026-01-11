@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const contactForm = document.querySelector(".contact-form");
     if (contactForm) {
         contactForm.addEventListener("submit", function(e) {
-            e.preventDefault();
 
             // Get form values
             const name = document.getElementById("name").value.trim();
@@ -52,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Basic validation
             if (name === "" || email === "" || message === "") {
+                e.preventDefault();
                 alert("Please fill in all fields.");
                 return false;
             }
@@ -59,14 +59,10 @@ document.addEventListener("DOMContentLoaded", function() {
             // Email validation
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
+                e.preventDefault();
                 alert("Please enter a valid email address.");
                 return false;
-            }
-
-            // Success message (in a real app, the form would be sent to a server)
-            alert("Thank you for your message! We will get back to you soon.");
-            contactForm.reset();
-        
+            }     
         });
     }
 

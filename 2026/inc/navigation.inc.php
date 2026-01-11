@@ -33,9 +33,9 @@ if (!isset($current_navi_item)) {
                 </a>
             </li>
             <li>
-                <a href="<?php echo $baseurl; ?>services" 
-                   class="<?php echo ($current_navi_item == 'services') ? 'active' : ''; ?>">
-                    Services
+                <a href="<?php echo $baseurl; ?>Projects" 
+                   class="<?php echo ($current_navi_item == 'projects') ? 'active' : ''; ?>">
+                    Projects
                 </a>
             </li>
             <li>

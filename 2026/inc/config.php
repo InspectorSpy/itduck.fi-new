@@ -1,6 +1,6 @@
 <?php
 // Site configuration
-define('SITE_NAME', 'My Website');
+define('SITE_NAME', 'IT Duck');
 define('BASE_URL','/2026/');
 define('CONTACT_EMAIL','hello@example.com');
 

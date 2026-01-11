@@ -48,4 +48,12 @@ open http://localhost:8080
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Branding Exception
+
+The ITDuck logo (`2026/img/ITDuck.png`) and favicon (`2026/favicon.ico`) are **NOT** 
+covered by the MIT License. All rights reserved.  Please do not use these assets 
+without permission. 
+
+If you fork this project, please replace the logo with your own branding.

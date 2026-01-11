@@ -19,9 +19,9 @@ $is_frontpage = true;
             <!-- Hero Section -->
              <section class="hero-section">
                 <div class="hero-content">
-                    <h2>Build something amazing</h2>
-                    <p>This is a clean, component-based website built with php, inspired by the Disobey architecture.</p>
-                    <a href="<?php echo $baseurl; ?>about" class="btn-primary">Learn More</a>
+                    <h2>Lorem Ipsum Dolor</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    <a href="<?php echo $baseurl; ?>about" class="btn-primary">Irure dolor</a>
                 </div>
              </section>
 
@@ -30,20 +30,20 @@ $is_frontpage = true;
                 <h2>Features</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <h3>Clean URLs</h3>
-                        <p>Uses a PHP router for beautiful, SEO-friendly URLs.</p>
+                        <h3>Lorem Ipsum</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Component-Based</h3>
-                        <p>Reusable PHP includes keep your code DRY</p>
+                        <h3>Lorem Ipsum</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>No Build Process</h3>
-                        <p>Pure PHP - no webpack, no npm, just code</p>
+                        <h3>Lorem Ipsum</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Easy Deployment</h3>
-                        <p>Works on any PHP hosting platform</p>
+                        <h3>Lorem Ipsum</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                     </div>
                 </div>
              </section>

@@ -1,6 +1,6 @@
 <?php
 $current_navi_item = "about";
-$page_title = "About - " . (defined("SITE_NAME") ? SITE_NAME : "My Website");
+$page_title = "About - " . (defined("SITE_NAME") ? SITE_NAME : "IT Duck");
 $header_title = "About Us";
 ?>
 
@@ -19,18 +19,19 @@ $header_title = "About Us";
         <div class="container">
 
             <section class="content-section">
-                <h2>Our Story</h2>
-                <p>This website is built using simple but powerful PHP architecture, inspired by the Disobey conference website.</p>
-                <p>We believe in keeping things simple and maintainable. No complex frameworks, no overwhelming build processes - just clean, organized PHP code.</p>
+                <h2>My Story</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </section>
 
             <section class="content-section">
                 <h2>Technology Stack</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                 <ul>
-                    <li><strong>PHP</strong> - Server-side rendering</li>
-                    <li><strong>Component Architecture</strong> - Reusable includes</li>
-                    <li><strong>Clean URLs</strong> - Custom router</li>
-                    <li><strong>Vanilla JS</strong> - No heavy frameworks</li>
+                    <li><strong>Lorem Ipsum</strong> - Dolor sit amet consectetur</li>
+                    <li><strong>Adipiscing Elit</strong> - Sed do eiusmod tempor</li>
+                    <li><strong>Incididunt</strong> - Ut labore et dolore magna</li>
+                    <li><strong>Aliqua</strong> - Ut enim ad minim veniam</li>
                 </ul>
             </section>
         </div>

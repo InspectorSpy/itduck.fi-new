@@ -6,7 +6,7 @@ $is_frontpage = isset($is_frontpage) ? $is_frontpage : false;
     <div class="header-content">
         <?php if ($is_frontpage): ?>
             <h1 class="site-title">Welcome to <?php echo SITE_NAME; ?></h1>
-            <p class="site-tagline">Building amazing things with PHP</p>
+            <p class="site-tagline">This is the new look of itduck.fi</p>
         <?php else: ?>
             <h1 class="page-title"><?php echo isset($header_title) ? $header_title : $page_title; ?></h1>
         <?php endif; ?>

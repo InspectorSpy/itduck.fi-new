@@ -1,6 +1,6 @@
 <?php
 $current_navi_item = "contact";
-$page_title = "Contact - " . (defined("SITE_NAME") ? SITE_NAME : "My Website");
+$page_title = "Contact - " . (defined("SITE_NAME") ? SITE_NAME : "IT Duck");
 $header_title = "Get In Touch";
 ?>
 
@@ -21,7 +21,7 @@ $header_title = "Get In Touch";
             </section>
 
             <section class="content-section">
-                <h2>Send us a Message</h2>
+                <h2>Send me a message</h2>
                 <form class="contact-form" method="post" action="">
                     <div class="form-group">
                         <label for="name">Name:</label>

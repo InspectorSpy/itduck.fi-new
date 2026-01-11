@@ -1,4 +1,4 @@
-# IT Duck Website - TODO List
+# TODO List
 
 ## Completed tasks
 

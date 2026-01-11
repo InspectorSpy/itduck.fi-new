@@ -27,7 +27,7 @@
 
 ## Features to add
 
-- [ ] Add a blog section
+- [ ] Add a skills/resume section
 - [ ] Create project showcase cards with images
 - [ ] Add social media links (GitHub, LinkedIn, etc.)
 - [ ] Implement project filtering/categories

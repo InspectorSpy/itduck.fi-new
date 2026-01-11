@@ -1,6 +1,6 @@
 # itduck.fi new
 
-A clean, component-based version built with PHP.
+A clean, new, component-based version built with PHP.
 
 ## Architecture plans
 

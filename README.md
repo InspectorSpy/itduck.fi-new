@@ -6,7 +6,7 @@ A clean, new, component-based version built with PHP.
 
 - **PHP Router** for clean URLs
 - **Component-based structure** with reusable includes
-- **No build process** pure PHP
+- **No build process**, pure PHP
 - **Easy deployment** to any PHP hosting
 
 ## Local Development

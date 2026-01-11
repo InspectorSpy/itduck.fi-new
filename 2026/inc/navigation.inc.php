@@ -7,7 +7,10 @@ if (!isset($current_navi_item)) {
 <nav class="main-navigation">
     <div class="nav-container">
         <div class="logo">
-            <a href="<?php echo $baseurl; ?>"><?php echo SITE_NAME; ?></a>
+            <a href="<?php echo $baseurl; ?>">
+                <img src="<?php echo $baseurl; ?>img/ITDuck.png" alt="<?php echo SITE_NAME; ?> Logo">
+                <span><?php echo SITE_NAME; ?></span>
+            </a>
         </div>
         
         <button class="mobile-menu-toggle" aria-label="Toggle menu">

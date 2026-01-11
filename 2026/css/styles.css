@@ -143,6 +143,18 @@
         }
     }
 
+    .logo a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+
+    .logo img {
+        height: 40px; /* Adjust as needed */
+        width: auto;
+    }
+
 /*  ==========================================
     HEADER
     ========================================== */

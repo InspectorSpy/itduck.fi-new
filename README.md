@@ -12,7 +12,6 @@ A clean, new, component-based version built with PHP.
 ## Structure plan
 
 ```
-├── router-dev.php       # Development router for clean URLs
 ├── 2026/                # Main site folder
 │   ├── index. php       # Homepage
 │   ├── about.php        # About page

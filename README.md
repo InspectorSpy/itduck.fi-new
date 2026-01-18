@@ -9,26 +9,12 @@ A clean, new, component-based version built with PHP.
 - **No build process**, pure PHP
 - **Easy deployment** to any PHP hosting
 
-## Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
-cd YOUR-REPO
-
-# Start the development server
-php -S localhost:8080 router-dev.php
-
-# Visit in browser
-open http://localhost:8080
-```
-
 ## Structure plan
 
 ```
 ├── router-dev.php       # Development router for clean URLs
 ├── 2026/                # Main site folder
-│   ├── index. php        # Homepage
+│   ├── index. php       # Homepage
 │   ├── about.php        # About page
 │   ├── inc/             # Reusable components
 │   │   ├── head.inc.php
@@ -37,8 +23,11 @@ open http://localhost:8080
 │   │   └── footer.inc.php
 │   ├── css/             # Stylesheets
 │   ├── js/              # JavaScript
-│   └── img/             # Images
-└── README.md
+│   |── img/             # Images
+|   └── router-dev.php   # Development router for clean URLs
+|── README.md
+└── TODO.md
+
 ```
 
 ## Requirements

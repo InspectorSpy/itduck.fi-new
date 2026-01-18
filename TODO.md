@@ -12,6 +12,14 @@
 - [x] Debug and correct mobile navigation toggle (CSS/JS class mismatch)
 - [x] Ensure dark theme and logo are applied
 - [x] Set MIT license in repository
+- [x] Fix nested directory structure (moved files form 2026/2026 to 2026/)
+- [x] Configure Apache virtual host for itduck.fi domain
+- [x] Set up SSL/HTTPS with Let's Encrypt
+- [x] Fix CSS/JS asset paths (removed /2026/ prefix from URLs)
+- [x] Configure BASE_URL in config.php
+- [x] Set up URL routing with .htaccess and router-dev.php
+- [x] Prevent server IP from showing website (domain-only access)
+- [x] Deploy site to production server
 
 ---
 
@@ -51,13 +59,13 @@
 
 ## Deployment Preparation
 
-- [ ] Prepare for hosting (choose hosting provider)
+- [x] Prepare for hosting (choose hosting provider)
+- [x] Set up SSL/HTTPS
+- [x] Test on multiple browsers and devices
 - [ ] Set up real email sending for contact form
 - [ ] Configure production environment variables
-- [ ] Set up SSL/HTTPS
 - [ ] Create deployment documentation
 - [ ] Set up analytics (Google Analytics, etc.)
-- [ ] Test on multiple browsers and devices
 - [ ] Create backup strategy for contact form data
 
 ---
@@ -67,7 +75,8 @@
 - [ ] Change default password in `view-messages.php` (will probably be deleting this page.)
 - [ ] Add CSRF protection to contact form
 - [ ] Implement rate limiting on form submissions
-- [ ] Add `.htaccess` or server config for security headers
+- [x] Add `.htaccess` or server config for security headers
+- [ ] Add security headers (CSP, X-Frame-Options, etc.)
 - [ ] Protect `/data` directory from web access
 
 ---
@@ -81,9 +90,23 @@
 
 ---
 
+## Server Configuration
+
+- [x] Configure Apache DocumentRoot to `/var/www/itduck.fi/2026/`
+- [x] Enable mod_rewrite
+- [x] Set proper file permissions (www-data ownership)
+- [x] Configure default site to prevent IP access
+- [ ] Set up automated deployments (Git hooks or CI/CD)
+- [ ] Configure server backups
+- [ ] Set up monitoring/uptime checks
+
+---
+
 ## Notes
 
 - Site uses PHP with component architecture
 - Messages saved to:  `2026/data/messages.json`
 - "Admin" viewer:  `/2026/view-messages.php`
 - Current password: `notsecure` (Implementation is not a secure method!)
+- **Production URL**: https://itduck.fi
+- **Server**: Hetzner (Debian + Apache)

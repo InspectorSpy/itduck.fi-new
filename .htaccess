@@ -1,0 +1,11 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+)$ $1.php [L]
+
+# Redirect .php to non-.php
+RewriteCond %{THE_REQUEST} ^GET\ (.*)\.php\ HTTP
+RewriteRule (.*)\.php$ $1 [R=301,L]

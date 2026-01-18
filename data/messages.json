@@ -1,8 +1,0 @@
-[
-    {
-        "timestamp": "2026-01-11 21:33:00",
-        "name": "test",
-        "email": "test@testmail.org",
-        "message": "This is a test message sent from the contact form on the site. Currently the message is saved to a messages.json file, this is only for development purposes."
-    }
-]

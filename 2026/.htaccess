@@ -6,4 +6,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # Route everything through router-dev.php
-RewriteRule ^(. *)$ router-dev.php?url=$1 [QSA,L]
+RewriteRule ^(.*)$ router-dev.php?url=$1 [QSA,L]

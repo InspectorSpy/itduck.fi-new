@@ -87,3 +87,4 @@
 - Messages saved to:  `2026/data/messages.json`
 - "Admin" viewer:  `/2026/view-messages.php`
 - Current password: `notsecure` (Implementation is not a secure method!)
+-

@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div class="container">      
             <section class="content-section">
                 <h2>Contact Information</h2>
-                <p>Email: <a href="mailto:<?php echo CONTACT_EMAIL; ?>"><?php echo CONTACT_EMAIL; ?></a></p>
+                <p>Email: <a href="mailto:<?php echo htmlspecialchars(CONTACT_EMAIL); ?>"><?php echo htmlspecialchars(CONTACT_EMAIL); ?></a></p>
             </section>
 
             <section class="content-section">
@@ -114,5 +114,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </main>
 
     <?php include __DIR__ . "/inc/footer.inc.php"; ?>
+    
+    <!-- Main JavaScript - with CSP nonce -->
+    <script nonce="<?php echo $csp_nonce; ?>" src="<?php echo htmlspecialchars($baseurl); ?>js/main.js"></script>
 </body>
 </html>

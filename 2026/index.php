@@ -1,6 +1,6 @@
 <?php
 $current_navi_item = "home";
-$page_title = "Home - " . (defined("SITE_NAME") ? SITE_NAME : "My Website");
+$page_title = "Home - " . (defined("SITE_NAME") ? SITE_NAME : "IT Duck");
 $is_frontpage = true;
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ $is_frontpage = true;
                 <div class="hero-content">
                     <h2>Lorem Ipsum Dolor</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                    <a href="<?php echo $baseurl; ?>about" class="btn-primary">Irure dolor</a>
+                    <a href="<?php echo htmlspecialchars($baseurl); ?>about" class="btn-primary">Irure dolor</a>
                 </div>
              </section>
 
@@ -52,5 +52,7 @@ $is_frontpage = true;
 
     <?php include __DIR__ . "/inc/footer.inc.php"; ?>
 
+    <!-- Main JavaScript - with CSP nonce -->
+    <script nonce="<?php echo $csp_nonce; ?>" src="<?php echo htmlspecialchars($baseurl); ?>js/main.js"></script>
 </body>
 </html>

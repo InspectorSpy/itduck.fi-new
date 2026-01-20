@@ -17,8 +17,7 @@ if (preg_match("#^/(css|js|img|fonts|webfonts|videos)(/.*)?$#", $path)) {
 
 // Page rewrites for pretty URLs
 $pages = [
-    'tickets', 'about', 'practical', 'ctf', 'ctfchallenge', 'faq', 'contact',
-    'program', 'privacy', 'communityvillage', 'competitions', 'venue', 'HackerPuzzle'
+    'about', 'contact', 'view-messages'
 ];
 
 foreach ($pages as $page) {

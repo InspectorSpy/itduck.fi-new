@@ -1,16 +1,21 @@
-RewriteEngine On
-RewriteBase /
+# Prevent directory listing
+Options -Indexes
 
-# Don't rewrite actual files and directories
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+# URL Rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
 
-# Route everything through router-dev.php
-RewriteRule ^(.*)$ router-dev.php?url=$1 [QSA,L]
+    # Don't rewrite actual files and directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Route everything through router-dev.php
+    RewriteRule ^(.*)$ router-dev.php?url=$1 [QSA,L]
+</IfModule>
 
 # Security Headers - Backup configuration
-# Primary headers are set in inc/security-headers.php
-
+# Primary headers are set in inc/security-headers. php
 <IfModule mod_headers.c>
     # Content Security Policy
     Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://code.jquery.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: ; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
@@ -30,25 +35,6 @@ RewriteRule ^(.*)$ router-dev.php?url=$1 [QSA,L]
     # Permissions Policy
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
     
-    # HSTS - Force HTTPS (uncomment when fully HTTPS)
-    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    # HSTS - Force HTTPS
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
-
-# URL Rewriting (your existing rules)
-<IfModule mod_rewrite. c>
-    RewriteEngine On
-    
-    # Add your existing rewrite rules here
-    # ... 
-</IfModule>
-
-# Protect sensitive directories
-<IfModule mod_authz_core.c>
-    # Protect data directory from web access
-    <Directory "/var/www/itduck.fi/2026/data">
-        Require all denied
-    </Directory>
-</IfModule>
-
-# Prevent directory listing
-Options -Indexes

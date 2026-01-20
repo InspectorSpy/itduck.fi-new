@@ -26,4 +26,4 @@
 </footer>
 
 <!-- scripts -->
-<script src="<?php echo $baseurl; ?>js/main.js"></script>
+<script nonce="<?php echo $csp_nonce; ?>" src="<?php echo htmlspecialchars($baseurl); ?>js/main.js"></script>

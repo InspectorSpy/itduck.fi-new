@@ -57,5 +57,8 @@ $messages = array_reverse($messages);
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
+
+        <!-- Main JavaScript - with CSP nonce -->
+         <script nonce="<?php echo $csp_nonce; ?>" src="<?php echo htmlspecialchars($baseurl); ?>js/main.js"></script>
     </body>
 </html>

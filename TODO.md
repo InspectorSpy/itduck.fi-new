@@ -73,7 +73,6 @@
 
 ## Security Enhancements
 
-- [ ] Add robots.txt
 - [ ] Change default password in `view-messages.php` (will probably be deleting this page.)
 - [ ] Add CSRF protection to contact form
 - [ ] Implement rate limiting on form submissions

@@ -30,6 +30,7 @@
 - [ ] Add services/skills section
 - [ ] Write compelling home page copy
 - [ ] Add professional bio and background
+- [ ] Embed github repos in Projects page
 
 ---
 
@@ -72,6 +73,7 @@
 
 ## Security Enhancements
 
+- [ ] Add robots.txt
 - [ ] Change default password in `view-messages.php` (will probably be deleting this page.)
 - [ ] Add CSRF protection to contact form
 - [ ] Implement rate limiting on form submissions
@@ -83,9 +85,9 @@
 
 ## Mobile & Responsive
 
-- [ ] Test on various mobile devices
-- [ ] Optimize touch targets for mobile
-- [ ] Test landscape/portrait orientations
+- [x] Test on various mobile devices
+- [x] Optimize touch targets for mobile
+- [x] Test landscape/portrait orientations
 - [ ] Ensure images scale properly on all screen sizes
 
 ---
@@ -229,7 +231,7 @@ ________________________________________________________________________________
 
 ### 📚 RESOURCES
 
-- CSP Validator: https://csp-evaluator.withgoogle. com/
+- CSP Validator: https://csp-evaluator.withgoogle.com/
 - Security Headers:  https://securityheaders.com/?q=itduck.fi
 - SRI Generator: https://www.srihash.org/
 - OWASP CSRF:  https://cheatsheetseries.owasp.org/

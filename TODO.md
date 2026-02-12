@@ -31,7 +31,7 @@
 ## Content improvements
 
 - [x] Add real content to About page
-    -- [ ] Improve content on About page
+    - [ ] Improve content on About page
 - [ ] Build out Projects page with portfolio items
 - [ ] Add services/skills section
 - [ ] Write compelling home page copy

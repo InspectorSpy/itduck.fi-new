@@ -19,19 +19,19 @@ $header_title = "About Us";
         <div class="container">
 
             <section class="content-section">
-                <h2>Lorem</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. </p>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h2>About this site</h2>
+                <p>This website is my personal portfolio and "project" site where you can find information about my work, projects, and interests.</p>
+                <p>Mind you, this is a work in progress and not all content is fully implemented yet.</p>
             </section>
 
             <section class="content-section">
-                <h2>Ipsum</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <h2>About Me</h2>
+                <p>I'm a first(1st) year student in Information Technology at the University of Applied Sciences of Oulu. A simple minded workaholic, jack-of-all-trades cybersecurity enjoyer.</p>
                 <ul>
-                    <li><strong>Lorem Ipsum</strong> - Dolor sit amet consectetur</li>
-                    <li><strong>Adipiscing Elit</strong> - Sed do eiusmod tempor</li>
-                    <li><strong>Incididunt</strong> - Ut labore et dolore magna</li>
-                    <li><strong>Aliqua</strong> - Ut enim ad minim veniam</li>
+                    <li><strong>Programming</strong> - PHP, JavaScript, HMTL, CSS, C, C++, and a tiny bit of C#.</li>
+                    <li><strong>Design</strong> - UI/UX design, responsive layouts, and accessibility.</li>
+                    <li><strong>Database</strong> - MySQL, PostreSQL, MariaDB</li>
+                    <li><strong>Other</strong> - Git, Linux, Docker, and some basic devops practices.</li>
                 </ul>
             </section>
         </div>

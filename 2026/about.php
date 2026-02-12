@@ -56,7 +56,6 @@ $header_title = "About";
                 <p>I'm constantly (read when motivated) working on improvements and new features. Upcoming additions may include:</p>
                 <ul>
                     <li>Detailed project case studies and write-ups</li>
-                    <li></li>
                     <li>Enhanced interactivity and dynamic content</li>
                     <li>Enhanced accessibility features (WCAG compliance?)</li>
                     <li>Performance optimizations and caching strategies</li>

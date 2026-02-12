@@ -9,9 +9,9 @@ $error_message = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Validate inputs
-    $name = htmlspecialchars(trim($_POST["name"] ?? ""));
-    $email = htmlspecialchars(trim($_POST["email"] ?? ""));
-    $message = htmlspecialchars(trim($_POST["message"] ?? ""));
+    $name = htmlspecialchars(trim($_POST["name"] ?? ""), ENT_QUOTES, 'UTF-8');
+    $email = trim($_POST["email"] ?? "");
+    $message = htmlspecialchars(trim($_POST["message"] ?? ""), ENT_QUOTES, 'UTF-8');
 
     if (!empty($name) && !empty($email) && !empty($message)) {
 
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $message_data = [
                 "timestamp" => date("Y-m-d H:i:s"),
                 "name"=> $name,
-                "email"=> $email,
+                "email"=> htmlspecialchars($email, ENT_QUOTES, 'UTF-8'),
                 "message"=> $message
             ];
 

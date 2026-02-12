@@ -179,7 +179,8 @@ ________________________________________________________________________________
 
 #### 9. Add SRI for jQuery CDN
 - [ ] Get hash from https://www.srihash.org/
-- [ ] Add `integrity` and `crossorigin` to script tag
+- [X] Got hash from https://releases.jquery.com/
+- [X] Add `integrity` and `crossorigin` to script tag
 - **File:** `inc/head.inc.php`
 
 #### 10. Add Nonces to Inline Styles

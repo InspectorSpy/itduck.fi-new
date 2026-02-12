@@ -20,6 +20,10 @@
 - [x] Set up URL routing with .htaccess and router-dev.php
 - [x] Prevent server IP from showing website (domain-only access)
 - [x] Deploy site to production server
+- [x] Added a raw robots.txt file
+- [x] Added SRI protection
+- [x] Sanitized contact form inputs with proper encoding
+- [x] Add session security with httponly, secure, samesite flags + regeneration
 
 ---
 
@@ -175,7 +179,9 @@ ________________________________________________________________________________
 
 ---
 
-### 🟢 LOW PRIORITY
+## /* mard for deletion 
+
+### 🟢 LOW PRIORITY 
 
 #### 9. Add SRI for jQuery CDN
 - [N/A] Get hash from https://www.srihash.org/
@@ -196,6 +202,8 @@ ________________________________________________________________________________
 #### 12. Sanitize Contact Form Inputs
 - [X] Use `htmlspecialchars(trim($_POST['field']), ENT_QUOTES, 'UTF-8')`
 - **File:** `contact.php`
+
+## */
 
 ---
 

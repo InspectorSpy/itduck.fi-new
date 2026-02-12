@@ -1,7 +1,7 @@
 <?php
 $current_navi_item = "about";
 $page_title = "About - " . (defined("SITE_NAME") ? SITE_NAME : "IT Duck");
-$header_title = "About Us";
+$header_title = "About";
 ?>
 
 <!DOCTYPE html>

@@ -26,5 +26,9 @@ if (!isset($page_title)) {
     <link rel="icon" type="image/x-icon" href="<?php echo htmlspecialchars($baseurl); ?>favicon.ico">
 
     <!-- jQuery (if needed): using CSP-approved CDN -->
-    <script nonce="<?php echo htmlspecialchars($csp_nonce); ?>" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script
+        nonce="<?php echo htmlspecialchars($csp_nonce); ?>"
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
 </head>

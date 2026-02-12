@@ -25,14 +25,43 @@ $header_title = "About";
 
             <section class="content-section">
                 <h2>About this site</h2>
-                <p>This website is my personal portfolio and "project" site where you can find information about my work, projects, and interests.</p>
+
+                <h3>Purpose & goals</h3>
+                <p>This website serves as my personal portfolio and project showcase, where I share and document my work, projects and interests. 
+                    It's both a learning platform and a professional presence, allowing me to experiment with new technologies while sharing my work with the world wide web.</p>
+
+                <h3>Development journey</h3>
+                <p>Built from the ashes of my old project website as a hands-on learning project, this site kind of reflects my growth as a developer. 
+                    Every line of code has taught me something new, from implementing security features to creating responsie layouts that work across all devices.</p>
+
+                <h3>Technical stack</h3>
+                <p>This site is built with simplicity and security in mind. Technologies used include:</p>
+                <ul>
+                    <li><strong>programming</strong> - PHP for server-side logic, JavaScript for interactivity, HTML and CSS for structure and styling.</li>
+                    <li><strong>Security</strong> - Content Security Policy (CSP) with noncesm input sanitizationm and XSS prevention measures.</li>
+                    <li><strong>Design</strong> - Responsive UI/UX design, mobile-first approach, and accessibility considerations.</li>
+                    <li><strong>Infrastructure</strong> - Hosted on a Debian server, version controlled with Git, following basic DevOps practices.</li>
+                </ul>
+
+                <h3>Architecture & features</h3>
+                <p>The site follows a modular PHP architecture with reusable components (navigation, header, footer) for maintainability. Key featyres include:</p>
+                <ul>
+                    <li>Clean, semantic HMTL5 structure</li>
+                    <li>Security-hardened with CSP headers and input validation</li>
+                    <li>Responsive design that adapts to any screen size</li>
+                    <li>Lightweight and performance-optimized</li>
+                </ul>
+
+                
+
+                <!--<p>This website is my personal portfolio and "project" site where you can find information about my work, projects, and interests.</p>
                 <p>Mind you, this is a work in progress and not all content is fully implemented yet.</p>
                 <p>Technologies used in this site include:</p>
                 <ul>
                     <li><strong>Programming</strong> - PHP, JavaScript, HTML, CSS.</li>
                     <li><strong>Design</strong> - Built with custom components, responsive layouts, and accessibility in mind.</li>
                     <li><strong>Other</strong> - Git, Debian.</li>
-                </ul>
+                </ul>-->
             </section>
         </div>
     </main>

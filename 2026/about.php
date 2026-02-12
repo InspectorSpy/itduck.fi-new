@@ -19,13 +19,13 @@ $header_title = "About Us";
         <div class="container">
 
             <section class="content-section">
-                <h2>My Story</h2>
+                <h2>Lorem</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. </p>
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </section>
 
             <section class="content-section">
-                <h2>Technology Stack</h2>
+                <h2>Ipsum</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                 <ul>
                     <li><strong>Lorem Ipsum</strong> - Dolor sit amet consectetur</li>

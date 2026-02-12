@@ -11,14 +11,14 @@ Thumbs.db
 
 # PHP
 *.log
-. env
+.env
 
 # Dependencies (if you add them later)
 vendor/
 node_modules/
 
 # Temporary files
-*. tmp
+*.tmp
 *.cache
 
 2026/data/messages.json

@@ -27,7 +27,7 @@ $is_frontpage = true;
 
             <!-- Features Section -->
              <section class="features-section">
-                <h2>Features</h2>
+                <h2>Lorem</h2>
                 <div class="features-grid">
                     <div class="feature-card">
                         <h3>Lorem Ipsum</h3>

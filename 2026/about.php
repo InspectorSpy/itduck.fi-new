@@ -26,9 +26,9 @@ $header_title = "About";
             <section class="content-section">
                 <h2>About this site</h2>
 
-                <h3>Purpose & goals</h3>
+                <h3>Purpose & Goals</h3>
                 <p>This website serves as my personal portfolio and project showcase, where I share and document my work, projects and interests. 
-                    It's both a learning platform and a professional presence, allowing me to experiment with new technologies while sharing my work with the world wide web.</p>
+                    It's both a learning platform and a professional presence, allowing me to experiment with new technologies while sharing my work on the web.</p>
 
                 <h3>Development journey</h3>
                 <p>Built from the ashes of my old project website as a hands-on learning project, this site kind of reflects my growth as a developer. 
@@ -43,10 +43,10 @@ $header_title = "About";
                     <li><strong>Infrastructure</strong> - Hosted on a Debian server, version controlled with Git, following basic DevOps practices.</li>
                 </ul>
 
-                <h3>Architecture & features</h3>
+                <h3>Architecture & Features</h3>
                 <p>The site follows a modular PHP architecture with reusable components (navigation, header, footer) for maintainability. Key features include:</p>
                 <ul>
-                    <li>Clean, semantic HMTL5 structure</li>
+                    <li>Clean, semantic HTML5 structure</li>
                     <li>Security-hardened with CSP headers and input validation</li>
                     <li>Responsive design that adapts to any screen size</li>
                     <li>Lightweight and performance-optimized</li>
@@ -62,7 +62,7 @@ $header_title = "About";
                     <li>Working contact form</li>
                 </ul>
                 
-                <h3>Open Source & learning</h3>
+                <h3>Open Source & Learning</h3>
                 <p>This project is <a href="https://github.com/InspectorSpy/itduck.fi-new" target="_blank" rel="noopener noreferrer">open source on GitHub</a>, 
                 where you can explore the code, track progress and see how everything works under the hood. Feel free to check it out if you're curious about the implementation details.</p>
             </section>

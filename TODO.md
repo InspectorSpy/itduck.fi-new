@@ -24,6 +24,7 @@
 - [x] Added SRI protection
 - [x] Sanitized contact form inputs with proper encoding
 - [x] Add session security with httponly, secure, samesite flags + regeneration
+- [x] Add server-side email validation
 
 ---
 
@@ -104,7 +105,7 @@
 - [x] Configure default site to prevent IP access
 - [x] Implement Content Security Policy with nonce
 - [x] Configure security headers (X-Frame-Options, X-Content-Type-Options, etc.)
-- [x] Set up HSTS (Strick-Transport-Security)
+- [x] Set up HSTS (Strict-Transport-Security)
 - [ ] Set up automated deployments (Git hooks or CI/CD)
 - [ ] Configure server backups
 - [ ] Set up monitoring/uptime checks
@@ -174,36 +175,8 @@ ________________________________________________________________________________
 - **Files:** `inc/security-headers.php`, `.htaccess`
 
 #### 8. Add Server-Side Email Validation
-- [ ] Use `filter_var($email, FILTER_VALIDATE_EMAIL)`
+- [X] Use `filter_var($email, FILTER_VALIDATE_EMAIL)`
 - **File:** `contact.php`
-
----
-
-## /* Mark for deletion 
-
-### 🟢 LOW PRIORITY 
-
-#### 9. Add SRI for jQuery CDN
-- [N/A] Get hash from https://www.srihash.org/
-- [X] Got hash from https://releases.jquery.com/
-- [X] Add `integrity` and `crossorigin` to script tag
-- **File:** `inc/head.inc.php`
-
-#### 10. Add Nonces to Inline Styles
-- [N/A] Search all `.php` files for `<style>` tags
-- [N/A] Add nonce attribute to each
-## NOTE: All Inline Styles are in view-messages.php file, which will be deleted.
-
-#### 11. Add Session Security
-- [X] Set secure cookie flags (httponly, secure, samesite)
-- [X] Implement session regeneration (every 30 min)
-- **File:** `inc/config.php`
-
-#### 12. Sanitize Contact Form Inputs
-- [X] Use `htmlspecialchars(trim($_POST['field']), ENT_QUOTES, 'UTF-8')`
-- **File:** `contact.php`
-
-## */
 
 ---
 
@@ -229,12 +202,12 @@ ________________________________________________________________________________
 | Layer | Current | After High Priority | Target |
 |-------|---------|---------------------|--------|
 | HTTPS/TLS | 10/10 | 10/10 | 10/10 |
-| CSP (Scripts) | 9/10 | 9/10 | 10/10 |
+| CSP (Scripts) | 9.5/10 | 10/10 | 10/10 |
 | CSP (Styles) | 4/10 | 9/10 | 10/10 |
 | CSRF | 0/10 | 9/10 | 9/10 |
-| Auth | 1/10 | 8/10 | 9/10 |
+| Auth | 2/10 | 8/10 | 9/10 |
 | Rate Limiting | 0/10 | 8/10 | 9/10 |
-| **OVERALL** | **6/10** | **8.3/10** | **9.5/10** |
+| **OVERALL** | **6.4/10** | **8.3/10** | **9.5/10** |
 
 ---
 

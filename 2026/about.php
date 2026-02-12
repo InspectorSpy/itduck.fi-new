@@ -30,8 +30,8 @@ $header_title = "About";
                 <p>Technologies used in this site include:</p>
                 <ul>
                     <li><strong>Programming</strong> - PHP, JavaScript, HTML, CSS.</li>
-                    <li><strong>Design</strong> - UI/UX design, responsive layouts, and accessibility.</li>
-                    <li><strong>Other</strong> - Git, Debian, and some basic devops practices.</li>
+                    <li><strong>Design</strong> - Built with custom components, responsive layouts, and accessibility in mind.</li>
+                    <li><strong>Other</strong> - Git, Debian.</li>
                 </ul>
             </section>
         </div>

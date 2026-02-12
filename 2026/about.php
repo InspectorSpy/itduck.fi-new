@@ -28,7 +28,7 @@ $header_title = "About";
 
                 <h3>Volunteering</h3>
                 <p>In addition to my IT studies and interest in cybersecurity, I have volunteered at <a href="https://disobey.fi" target="_blank" rel="noopener noreferrer">Disobey</a>, a well-known hacker/cyber conference in Finland.</p>
-                <p>I am also an active board member of Oulun Insinööriopiskelijat OIO ry, the local association for engineering students in Oulu.</p>
+                <p>I am also an active board member of <a href="https://oiory.insinoori.fi" target="_blank" rel="noopener noreferrer">Oulun Insinööriopiskelijat OIO ry</a>, the local association for engineering students in Oulu.</p>
             </section>
 
             <section class="content-section">

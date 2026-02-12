@@ -73,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div class="container">      
             <section class="content-section">
                 <h2>Contact Information</h2>
+                <h1>NOTE: This contact form is currently non-functional.</h1>
                 <p>Email: <a href="mailto:<?php echo htmlspecialchars(CONTACT_EMAIL); ?>"><?php echo htmlspecialchars(CONTACT_EMAIL); ?></a></p>
             </section>
 

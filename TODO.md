@@ -54,7 +54,7 @@
 - [ ] Add loading states/animations
 - [ ] Improve accessibility (ARIA labels, keyboard navigation)
 - [ ] Add print stylesheet
-- [ ] Add robots.txt
+- [X] Add robots.txt
 
 ---
 

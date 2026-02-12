@@ -2,7 +2,7 @@
     <div class="footer-content">
         <div class="footer-section">
             <h3><?php echo SITE_NAME; ?></h3>
-            <p>Built with PHP component architecture</p>
+            <p>Official website of <?php echo SITE_NAME; ?></p>
         </div>
 
         <div class="footer-section">

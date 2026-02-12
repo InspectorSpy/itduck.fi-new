@@ -178,22 +178,23 @@ ________________________________________________________________________________
 ### 🟢 LOW PRIORITY
 
 #### 9. Add SRI for jQuery CDN
-- [ ] Get hash from https://www.srihash.org/
+- [N/A] Get hash from https://www.srihash.org/
 - [X] Got hash from https://releases.jquery.com/
 - [X] Add `integrity` and `crossorigin` to script tag
 - **File:** `inc/head.inc.php`
 
 #### 10. Add Nonces to Inline Styles
-- [ ] Search all `.php` files for `<style>` tags
-- [ ] Add nonce attribute to each
+- [N/A] Search all `.php` files for `<style>` tags
+- [N/A] Add nonce attribute to each
+## NOTE: All Inline Styles are in view-messages.php file, which will be deleted.
 
 #### 11. Add Session Security
-- [ ] Set secure cookie flags (httponly, secure, samesite)
-- [ ] Implement session regeneration (every 30 min)
+- [X] Set secure cookie flags (httponly, secure, samesite)
+- [X] Implement session regeneration (every 30 min)
 - **File:** `inc/config.php`
 
 #### 12. Sanitize Contact Form Inputs
-- [ ] Use `htmlspecialchars(trim($_POST['field']), ENT_QUOTES, 'UTF-8')`
+- [X] Use `htmlspecialchars(trim($_POST['field']), ENT_QUOTES, 'UTF-8')`
 - **File:** `contact.php`
 
 ---

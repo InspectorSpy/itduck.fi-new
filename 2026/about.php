@@ -22,8 +22,9 @@ $header_title = "About";
                 <h2>About me</h2>
 
                 <h3>Studies & Background</h3>
-                <p>I'm a first year student in Information Technology at the Oulu University of Applied Sciences. Simply put, I'm a workaholic jack-of-all-trades.</p>
+                <p>I'm a first year student in Information Technology at the Oulu University of Applied Sciences.</p>
                 <p>My background is mostly in IT, I have a vocational qualification as a IT Support Person and relevant work experience in IT support. I possess a strong interest in cybersecurity, even though I'm still relatively new to that field.</p>
+                <p>Simply put, I'm a workaholic jack-of-all-trades.</p>
 
                 <h3>Volunteering</h3>
                 <p>In addition to my IT studies and interest in cybersecurity, I have volunteered at Disobey, a well-known hacker/cyber confrence in Finland.</p>

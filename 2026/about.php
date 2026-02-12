@@ -52,16 +52,20 @@ $header_title = "About";
                     <li>Lightweight and performance-optimized</li>
                 </ul>
 
-                
-
-                <!--<p>This website is my personal portfolio and "project" site where you can find information about my work, projects, and interests.</p>
-                <p>Mind you, this is a work in progress and not all content is fully implemented yet.</p>
-                <p>Technologies used in this site include:</p>
+                <h3>Future plans</h3>
+                <p>I'm constantly (read when motivated) working on improvements and new features. Upcoming additions may include:</p>
                 <ul>
-                    <li><strong>Programming</strong> - PHP, JavaScript, HTML, CSS.</li>
-                    <li><strong>Design</strong> - Built with custom components, responsive layouts, and accessibility in mind.</li>
-                    <li><strong>Other</strong> - Git, Debian.</li>
-                </ul>-->
+                    <li>Detailed project case studies and write-ups</li>
+                    <li></li>
+                    <li>Enhanced interactivity and dynamic content</li>
+                    <li>Enhanced accessibility features (WCAG compliance?)</li>
+                    <li>Performance optimizations and caching strategies</li>
+                    <li>Wokring contact form</li>
+                </ul>
+                
+                <h3>Open Source & learning</h3>
+                <p>This project is <a href="https://github.com/InspectorSpy/itduck.fi-new" target="_blank" rel="noopener noreferrer">open source on GitHub</a>, 
+                where you can explore the code, track progress and see how everything works under the hood. Feel free to check it out if you're curious about the implementation details.</p>
             </section>
         </div>
     </main>

@@ -20,7 +20,7 @@ $header_title = "About";
 
             <section class="content-section">
                 <h2>About me</h2>
-                <p>I'm a first(1st) year student in Information Technology at the Oulu University of Applied Sciences. A simple minded workaholic, jack-of-all-trades cybersecurity enjoyer.
+                <p>I'm a first year student in Information Technology at the Oulu University of Applied Sciences. A simple-minded workaholic, jack-of-all-trades cybersecurity enjoyer.</p>
             </section>
 
             <section class="content-section">
@@ -29,7 +29,7 @@ $header_title = "About";
                 <p>Mind you, this is a work in progress and not all content is fully implemented yet.</p>
                 <p>Technologies used in this site include:</p>
                 <ul>
-                    <li><strong>Programming</strong> - PHP, JavaScript, HMTL, CSS.</li>
+                    <li><strong>Programming</strong> - PHP, JavaScript, HTML, CSS.</li>
                     <li><strong>Design</strong> - UI/UX design, responsive layouts, and accessibility.</li>
                     <li><strong>Other</strong> - Git, Debian, and some basic devops practices.</li>
                 </ul>

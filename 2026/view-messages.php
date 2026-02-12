@@ -1,6 +1,6 @@
 <?php
 // This is not a secure method!! Just a simple password protection for viewing messages.
-session_start();
+require_once __DIR__ . "/inc/config.php";
 if (!isset($_SESSION["authenticated"])) {
     if (isset($_POST["password"]) && $_POST["password"] === "notsecure") {
         $_SESSION["authenticated"] = true;

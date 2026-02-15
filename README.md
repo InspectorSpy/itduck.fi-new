@@ -1,4 +1,4 @@
-# itduck.fi new
+# itduck.fi, rebuilt
 
 A clean, new, component-based version built with PHP.
 

@@ -180,6 +180,8 @@ ________________________________________________________________________________
 - [X] Use `filter_var($email, FILTER_VALIDATE_EMAIL)`
 - **File:** `contact.php`
 
+#### 9. Fix mobile nav button
+- [ ] Button not activating when pressed, troubleshoot and fix, document fix, cool, yes, okay, thanks.
 ---
 
 ### 🧪 TESTING CHECKLIST

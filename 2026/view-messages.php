@@ -1,6 +1,8 @@
 <?php
 // This is not a secure method!! Just a simple password protection for viewing messages.
 require_once __DIR__ . "/inc/config.php";
+require_once __DIR__ . "/inc/security-headers.php";
+
 if (!isset($_SESSION["authenticated"])) {
     if (isset($_POST["password"]) && $_POST["password"] === "notsecure") {
         $_SESSION["authenticated"] = true;
@@ -22,9 +24,9 @@ if (!isset($_SESSION["authenticated"])) {
 }
 
 // Simple messages viewer
-require_once __dir__ . "/inc/config.php";
+require_once __DIR__ . "/inc/config.php";
 
-$messages_file = __dir__ . "/data/messages.json";
+$messages_file = __DIR__ . "/data/messages.json";
 $messages = [];
 
 if (file_exists($messages_file)) {

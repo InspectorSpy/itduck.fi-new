@@ -25,7 +25,7 @@
 - [x] Sanitized contact form inputs with proper encoding
 - [x] Add session security with httponly, secure, samesite flags + regeneration
 - [x] Add server-side email validation
-
+- [x] Mobile nav fixed
 ---
 
 ## Content improvements
@@ -178,14 +178,12 @@ ________________________________________________________________________________
 - [X] Use `filter_var($email, FILTER_VALIDATE_EMAIL)`
 - **File:** `contact.php`
 
-#### 9. Fix mobile nav button
-- [ ] Button not activating when pressed, troubleshoot and fix, document fix, cool, yes, okay, thanks.
 ---
 
 ### 🧪 TESTING CHECKLIST
 
 **CSP Scripts:**
-- [ ] Try `eval('alert("XSS")')` in console → Should be blocked
+- [X] Try `eval('alert("XSS")')` in console → Should be blocked
 
 **CSP Inline Scripts:**
 - [ ] Add `<script>alert('test')</script>` → Should be blocked

@@ -21,7 +21,7 @@ $is_frontpage = true;
                 <div class="hero-content">
                     <h2>Lorem Ipsum Dolor</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                    <a href="<?php echo htmlspecialchars($baseurl); ?>about" class="btn-primary">Irure dolor</a>
+                    <a href="<?php echo htmlspecialchars($baseurl); ?>about" class="btn-primary">About</a>
                 </div>
              </section>
 

@@ -116,7 +116,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <?php include __DIR__ . "/inc/footer.inc.php"; ?>
     
-    <!-- Main JavaScript - with CSP nonce -->
-    <script nonce="<?php echo $csp_nonce; ?>" src="<?php echo htmlspecialchars($baseurl); ?>js/main.js"></script>
 </body>
 </html>

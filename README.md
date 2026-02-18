@@ -18,7 +18,7 @@ A clean, new, component-based version built with PHP.
 │   ├── about.php        # About page
 │   ├── contact.php      # Contact page
 │   ├── router-dev.php   # Development router for clean URLs
-│   ├── .htaccess        # URL rewritingn & security headers
+│   ├── .htaccess        # URL rewriting & security headers
 │   ├── robots.txt       # SEO configuration
 │   ├── inc/             # Reusable components
 │   │   ├── config.php
@@ -48,7 +48,7 @@ A clean, new, component-based version built with PHP.
 
 ## Development
 
-To run locally with PHP's built-in-server:
+To run locally with PHP's built-in server:
 
 ```bash
 cd 2026
@@ -74,4 +74,3 @@ covered by the MIT License. All rights reserved.  Please do not use these assets
 without permission. 
 
 If you fork this project, please replace the logo with your own branding.
-```

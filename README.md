@@ -8,31 +8,60 @@ A clean, new, component-based version built with PHP.
 - **Component-based structure** with reusable includes
 - **No build process**, pure PHP
 - **Easy deployment** to any PHP hosting
+- **Security-focused** with CSP, input sanitization, and security headers
 
 ## Structure plan
 
 ```
 ├── 2026/                # Main site folder
-│   ├── index. php       # Homepage
+│   ├── index.php        # Homepage
 │   ├── about.php        # About page
+│   ├── contact.php      # Contact page
+│   ├── router-dev.php   # Development router for clean URLs
+│   ├── .htaccess        # URL rewritingn & security headers
+│   ├── robots.txt       # SEO configuration
 │   ├── inc/             # Reusable components
+│   │   ├── config.php
+│   │   ├── security-headers.php
 │   │   ├── head.inc.php
 │   │   ├── navigation.inc.php
 │   │   ├── header.inc.php
 │   │   └── footer.inc.php
 │   ├── css/             # Stylesheets
+│   │   └── styles.css
 │   ├── js/              # JavaScript
-│   |── img/             # Images
-|   └── router-dev.php   # Development router for clean URLs
-|── README.md
+│   │   └── main.js
+│   ├── img/             # Images
+│   └── data/            # JSON message storage (gitignored)
+├── .gitattributes
+├── .gitignore
+├── LICENSE
+├── README.md
 └── TODO.md
-
 ```
 
 ## Requirements
 
 - PHP 7.4 or higher
 - Web server (Apache/Nginx for production, or PHP's built-in server for development)
+- Apache `mod_rewrite` enabled (for `.htaccess` URL routing)
+
+## Development
+
+To run locally with PHP's built-in-server:
+
+```bash
+cd 2026
+php -S localhost:8000 router-dev.php
+```
+
+## Security features
+
+- Content Security Policy (CSP) with nonces
+- Security headers configured in `.htaccess` and PHP
+- Input sanitization and XSS prevention
+- HTTPS enforcement (HSTS)
+- Frame protection and MIME sniffing prevention
 
 ## License
 
@@ -45,3 +74,4 @@ covered by the MIT License. All rights reserved.  Please do not use these assets
 without permission. 
 
 If you fork this project, please replace the logo with your own branding.
+```

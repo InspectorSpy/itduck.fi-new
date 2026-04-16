@@ -81,8 +81,8 @@
 ## Security Enhancements
 
 - [ ] Change default password in `view-messages.php` (will probably be deleting this page.)
-- [ ] Add CSRF protection to contact form
-- [ ] Implement rate limiting on form submissions
+- [x] Add CSRF protection to contact form
+- [x] Implement rate limiting on form submissions
 - [x] Add `.htaccess` or server config for security headers
 - [x] Add security headers (CSP, X-Frame-Options, etc.)
 - [x] Protect `/data` directory from web access
@@ -141,9 +141,9 @@ ________________________________________________________________________________
 - **Files:** `inc/security-headers.php`, `.htaccess`
 
 #### 2. Add CSRF Protection to Contact Form
-- [ ] Generate token:  `$_SESSION['csrf_token'] = bin2hex(random_bytes(32));`
-- [ ] Add hidden field:  `<input type="hidden" name="csrf_token" value="<? php echo $_SESSION['csrf_token']; ? >">`
-- [ ] Validate in contact. php before processing
+- [x] Generate token:  `$_SESSION['csrf_token'] = bin2hex(random_bytes(32));`
+- [x] Add hidden field:  `<input type="hidden" name="csrf_token" value="<? php echo $_SESSION['csrf_token']; ? >">`
+- [x] Validate in contact.php before processing
 - **Files:** `contact.php`, `inc/config.php`
 
 #### 3. Fix/Delete Insecure Message Viewer
@@ -152,8 +152,8 @@ ________________________________________________________________________________
 - **File:** `view-messages.php`
 
 #### 4. Add Rate Limiting to Contact Form
-- [ ] Track submissions per IP in session (max 5 per hour)
-- [ ] Block excessive submissions
+- [x] Track submissions per IP in session (max 5 per hour)
+- [x] Block excessive submissions
 - **File:** `contact.php`
 
 ---
@@ -190,10 +190,11 @@ ________________________________________________________________________________
 - [ ] Add with nonce → Should work
 
 **CSRF:**
-- [ ] Submit form from external site → Should be rejected
+- [x] Submit form from external site → Should be rejected
+- [x] Tamper with token in dev tools -> Should be rejected
 
 **Rate Limiting:**
-- [ ] Submit form 6 times rapidly → 6th should be blocked
+- [x] Submit form 6 times rapidly → 6th should be blocked
 
 ---
 
@@ -204,10 +205,10 @@ ________________________________________________________________________________
 | HTTPS/TLS | 10/10 | 10/10 | 10/10 |
 | CSP (Scripts) | 9.5/10 | 10/10 | 10/10 |
 | CSP (Styles) | 4/10 | 9/10 | 10/10 |
-| CSRF | 0/10 | 9/10 | 9/10 |
+| CSRF | 9/10 | 9/10 | 9/10 |
 | Auth | 2/10 | 8/10 | 9/10 |
-| Rate Limiting | 0/10 | 8/10 | 9/10 |
-| **OVERALL** | **6.4/10** | **8.3/10** | **9.5/10** |
+| Rate Limiting | 8/10 | 8/10 | 9/10 |
+| **OVERALL** | **7.1/10** | **8.3/10** | **9.5/10** |
 
 ---
 
@@ -223,7 +224,8 @@ ________________________________________________________________________________
 ### 📝 SECURITY NOTES
 
 - CSP nonce system is working ✅
-- Main vulnerabilities:  CSRF, rate limiting, authentication
+- Main vulnerabilities:  CSP styles, authentication on message viewer
 - `data/` directory is protected ✅
 - Backup `data/messages.json` before changes
 - `'unsafe-inline'` in styles defeats CSP for CSS attacks
+- **CSRF and Rate Limiting have been implemented ✅**

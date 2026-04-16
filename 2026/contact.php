@@ -1,120 +1,111 @@
 <?php
 $current_navi_item = "contact";
 $page_title = "Contact - " . (defined("SITE_NAME") ? SITE_NAME : "IT Duck");
-$header_title = "Get In Touch";
 
-$success_message ="";
+// Ensure session is started for authentication
+if (session_status() === PHP_SESSION_NONE) {
+    require_once __DIR__ . '/inc/config.php';
+}
+
+// Generate CSRF token
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+$csrf_token = $_SESSION['csrf_token'];
+
+$message_sent = false;
 $error_message = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // Validate inputs
-    $name = htmlspecialchars(trim($_POST["name"] ?? ""), ENT_QUOTES, 'UTF-8');
-    $email = trim($_POST["email"] ?? "");
-    $message = htmlspecialchars(trim($_POST["message"] ?? ""), ENT_QUOTES, 'UTF-8');
+    // Validate CSRF token
+    if (!isset($_POST['csrf_token']) || !hash_equals($csrf_token, $_POST['csrf_token'])) {
+        $error_message = "Invalid request. Please try again.";
+        // Invalidate the token to prevent reuse
+        unset($_SESSION['csrf_token']);
+    } else {
+        // Process form data
+        $name = trim(filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING));
+        $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
+        $message = trim(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING));
 
-    if (!empty($name) && !empty($email) && !empty($message)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error_message = "Please enter a valid email address.";
+        } elseif (empty($name) || empty($message)) {
+            $error_message = "Please fill out all fields.";
+        } else {
+            $messages_file = __DIR__ . '/data/messages.json';
+            $messages = json_decode(file_get_contents($messages_file), true) ?? [];
 
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-            // Create data directory if it doesn't exist
-            $data_dir = __DIR__ . "/data";
-            if (!file_exists($data_dir)) {
-                mkdir($data_dir, 0755, true);
-            }
-
-            // Prepare message data
-            $message_data = [
-                "timestamp" => date("Y-m-d H:i:s"),
-                "name"=> $name,
-                "email"=> htmlspecialchars($email, ENT_QUOTES, 'UTF-8'),
-                "message"=> $message
+            $new_message = [
+                'name' => $name,
+                'email' => $email,
+                'message' => $message,
+                'timestamp' => date('Y-m-d H:i:s')
             ];
 
-            // Load existing messages
-            $message_file = $data_dir . "/messages.json";
-            $messages = [];
+            $messages[] = $new_message;
+            file_put_contents($messages_file, json_encode($messages, JSON_PRETTY_PRINT));
+            
+            $message_sent = true;
 
-            if (file_exists($message_file)) {
-                $messages = json_decode(file_get_contents($message_file), true) ?? [];
-            }
-
-            // Add new message
-            $messages[] = $message_data;
-
-            // Save to file
-            $json_data = json_encode($messages, JSON_PRETTY_PRINT);
-
-            if (file_put_contents($message_file, $json_data)) {
-                $success_message = "Thank you! Your message has been sent successfully.";
-            } else {
-                $error_message = "Sorry, there was an error saving your message, Please try again.";
-            }
-        } else {
-            $error_message = "Please enter a valid email address.";
+            // Unset token after successful use
+            unset($_SESSION['csrf_token']);
         }
-    } else {
-        $error_message = "Please fill in all fields.";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-    <?php include __DIR__ . "/inc/head.inc.php"; ?>
 
-<body class="contact-page">
+<?php include __DIR__ . "/inc/head.inc.php"; ?>
 
+<body>
     <?php include __DIR__ . "/inc/navigation.inc.php"; ?>
 
-    <?php include __DIR__ . "/inc/header.inc.php"; ?>
-
     <main class="main-content">
-        <div class="container">      
-            <section class="content-section">
-                <h2>Contact Information</h2>
-                <h1>NOTE: This contact form is currently non-functional.</h1>
-                <p>Email: <a href="mailto:<?php echo htmlspecialchars(CONTACT_EMAIL); ?>"><?php echo htmlspecialchars(CONTACT_EMAIL); ?></a></p>
-            </section>
+        <div class="container">
+            <section class="content-section text-center">
+                <h1>Contact Me</h1>
+                <p>Have a question or a project in mind? Let's talk.</p>
 
-            <section class="content-section">
-                <h2>Send me a message</h2>
-                <?php if ($success_message): ?>
+                <?php if ($message_sent): ?>
                     <div class="alert alert-success">
-                        <?php echo $success_message; ?>
+                        Thank you for your message! I'll get back to you shortly.
                     </div>
                 <?php endif; ?>
 
                 <?php if ($error_message): ?>
                     <div class="alert alert-error">
-                        <?php echo $error_message; ?>
+                        <?php echo htmlspecialchars($error_message); ?>
                     </div>
                 <?php endif; ?>
 
-                <form class="contact-form" method="post" action="">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($_POST["name"] ?? ""); ?>" required>
-                    </div>
+                <?php if (!$message_sent): ?>
+                <form action="<?php echo htmlspecialchars($baseurl); ?>contact" method="post" class="contact-form">
+                    
+                    <!-- --- CHANGE 5: Add hidden CSRF token field to the form --- -->
+                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
 
                     <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($_POST["email"] ?? ""); ?>" required>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="5" required><?php echo htmlspecialchars($_POST["message"] ?? ""); ?></textarea>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-
-                    <button type="submit" class="btn-primary">Send Message</button>
-
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
+                <?php endif; ?>
             </section>
         </div>
     </main>
 
     <?php include __DIR__ . "/inc/footer.inc.php"; ?>
-    
 </body>
 </html>

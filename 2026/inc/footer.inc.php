@@ -1,18 +1,16 @@
 <footer class="footer">
-    <div class="container">
-        <!-- Assuming some footer content might be here -->
-        <div class="footer-bottom">
-            <p>&copy; <?php echo date("Y"); ?> IT Duck. All rights reserved.</p>
-            <div class="theme-switcher">
-                 <button id="theme-toggle" aria-label="Toggle theme">
-                    <!-- Icons can be adjusted as needed -->
-                 </button>
-            </div>
+    <div class="container footer-content">
+        <p>&copy; <?php echo date("Y"); ?> IT Duck. All rights reserved.</p>
+        <div class="theme-switcher">
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <img src="<?php echo htmlspecialchars($baseurl); ?>img/icons/light.svg" alt="Light mode" class="light-icon">
+                <img src="<?php echo htmlspecialchars($baseurl); ?>img/icons/dark.svg" alt="Dark mode" class="dark-icon">
+            </button>
         </div>
     </div>
 </footer>
 
-<!-- Main JavaScript file -->
+<!-- Main JavaScript file that handles general interactions -->
 <script nonce="<?php echo $csp_nonce; ?>" src="<?php echo htmlspecialchars($baseurl); ?>js/main.js"></script>
 
 <!-- Inline script for theme TOGGLE logic - CORRECTED and WITH NONCE -->
@@ -22,7 +20,7 @@
         
         // This function handles the button click
         function handleThemeToggle() {
-            // Check if the light-mode class is currently present
+            // Check if the light-mode class is currently present on the root <html> element
             const isLight = document.documentElement.classList.contains('light-mode');
             
             if (isLight) {

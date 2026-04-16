@@ -1,0 +1,18 @@
+/* /2026/css/light-mode.css */
+
+/* These styles will apply when the <html> element has the .light-mode class */
+.light-mode {
+    --primary-color: #d9534f;   /* A sample red for light mode */
+    --secondary-color: #c9302c; /* Darker red for hover */
+    --text-color: #333333;      /* Dark text for light background */
+    --text-light: #555555;      /* Slightly lighter dark text */
+    --bg-color: #ffffff;        /* White background */
+    --bg-secondary: #f9f9f9;    /* Off-white secondary background */
+    --border-color: #dddddd;    /* Light gray border */
+    --accent-color: #d9534f;    /* Red accent */
+}
+
+/* You may need to add more specific overrides below */
+.light-mode body {
+    text-shadow: none;
+}

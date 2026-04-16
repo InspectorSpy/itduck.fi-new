@@ -26,10 +26,8 @@ $csp_directives = [
     // Scripts: Allow own scripts, JQuery CDN, and nonce-based inline scripts
     "script-src 'self' https://code.jquery.com 'nonce-{$csp_nonce}'",
 
-    // Styles: Allow own stylesheets and inline styles
-    // Note: 'unsafe-inline' is needed for your current inline styles
-    // Consider moving inline styles to external files for better security
-    "style-src 'self' 'unsafe-inline'",
+    // Styles: Allow own stylesheets and nonce-based inline styles
+    "style-src 'self' 'nonce-{$csp_nonce}'",
 
     // Images: Allow same origin and data: URIs (for base64 images)
     "img-src 'self' data:",

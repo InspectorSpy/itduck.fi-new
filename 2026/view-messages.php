@@ -6,16 +6,28 @@ require_once __DIR__ . "/inc/security-headers.php";
 if (!isset($_SESSION["authenticated"])) {
     if (isset($_POST["password"]) && $_POST["password"] === "notsecure") {
         $_SESSION["authenticated"] = true;
+        // Regenerate session ID to prevent fixation
+        session_regenerate_id(true);
     } else {
         ?>
         <!DOCTYPE html>
         <html lang="en">
-            <body style="background: #1c1d28; color: #e1bd2e; font-family: sans-serif; padding: 50px; text-align: center;">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Login</title>
+                <style nonce="<?php echo $csp_nonce; ?>">
+                    .login-body { background: #1c1d28; color: #e1bd2e; font-family: sans-serif; padding: 50px; text-align: center; }
+                    .login-input { padding: 10px; font-size: 16px; }
+                    .login-button { padding: 10px 20px; font-size: 16px; }
+                </style> 
+            </head>
+            <body class="login-body">
                 <h2>Enter password</h2>
                 <form method="post">
-                    <input type="password" name="password" style="padding: 10px; font-size: 16px;">
-                    <button type="submit" style="padding: 10px 20px; font-size: 16px;">Login</button>
-            </form>
+                    <input type="password" name="password" class="login-input">
+                    <button type="submit" class="login-button">Login</button>
+                </form>
             </body>
         </html>
         <?php
@@ -24,8 +36,6 @@ if (!isset($_SESSION["authenticated"])) {
 }
 
 // Simple messages viewer
-require_once __DIR__ . "/inc/config.php";
-
 $messages_file = __DIR__ . "/data/messages.json";
 $messages = [];
 
@@ -40,7 +50,10 @@ $messages = array_reverse($messages);
 <!DOCTYPE html>
 <html lang="en">
     <?php include __DIR__ . "/inc/head.inc.php"; ?>
-
+    <style nonce="<?php echo $csp_nonce; ?>">
+        .messages-container { padding: 40px 20px; }
+        .message-card { background: var(--bg-secondary); padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid var(--yellow); }
+    </style>
     <body>
         <div class="container" style="padding: 40px 20px;">
             <h1>Contact messages (<?php echo count($messages); ?>)</h1>
@@ -49,7 +62,7 @@ $messages = array_reverse($messages);
                 <p>No messages yet. </p>
             <?php else:  ?>
                 <?php foreach ($messages as $msg): ?>
-                    <div style="background: var(--bg-secondary); padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid var(--yellow);">
+                    <div class="message-card">
                         <p><strong>From: </strong> <?php echo htmlspecialchars($msg["name"]); ?></p>
                         <p><strong>Email:</strong> <a href="mailto:<?php echo htmlspecialchars($msg["email"]); ?>"><?php echo htmlspecialchars($msg["email"]); ?></a></p>
                         <p><strong>Date:</strong> <?php echo htmlspecialchars($msg["timestamp"]); ?></p>

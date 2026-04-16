@@ -18,6 +18,12 @@ $error_message = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
+    // Honeypot validation
+    if (!empty($_POST['website'])) {
+        // Detected as bot submission, ignore without processing
+        $message_sent = false;
+    }
+
     // Validate CSRF token
     if (!isset($_POST['csrf_token']) || !hash_equals($csrf_token, $_POST['csrf_token'])) {
         $error_message = "Invalid request. Please try again.";
@@ -114,6 +120,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <!-- Add hidden CSRF token field to the form  -->
                         <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
 
+                        <!-- Honeypot field (hidden from users) -->
+                        <div class="form-group honeypot">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="name" required>
+                        </div>
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -132,6 +143,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </section>
         </div>
     </main>
+
+    <!-- CSS to hide the honeypot field -->
+    <style nonce="<?php echo $csp_nonce; ?>">
+        .honeypot {
+            position: absolute;
+            left: -5000px;
+            visibility: hidden;
+        }
+    </style>
 
     <?php include __DIR__ . "/inc/footer.inc.php"; ?>
 </body>

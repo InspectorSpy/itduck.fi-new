@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <?php if (!$message_sent): ?>
                 <form action="<?php echo htmlspecialchars($baseurl); ?>contact" method="post" class="contact-form">
                     
-                    <!-- --- CHANGE 5: Add hidden CSRF token field to the form --- -->
+                    <!-- Add hidden CSRF token field to the form  -->
                     <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
 
                     <div class="form-group">

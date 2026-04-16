@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div class="container">
             <section class="content-section text-center">
                 <h1>Contact Me</h1>
-                <p>Have a question or a project in mind? Let's talk.</p>
+                <p>Have a question in mind? Let's talk.</p>
 
                 <?php if ($message_sent): ?>
                     <div class="alert alert-success">

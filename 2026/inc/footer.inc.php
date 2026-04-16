@@ -1,40 +1,59 @@
-<footer class="footer">
-    <div class="container footer-content">
-        <p>&copy; <?php echo date("Y"); ?> IT Duck. All rights reserved.</p>
-        <div class="theme-switcher">
-            <button id="theme-toggle" aria-label="Toggle theme">
-                <img src="<?php echo htmlspecialchars($baseurl); ?>img/icons/light.svg" alt="Light mode" class="light-icon">
-                <img src="<?php echo htmlspecialchars($baseurl); ?>img/icons/dark.svg" alt="Dark mode" class="dark-icon">
-            </button>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><?php echo defined('SITE_NAME') ? SITE_NAME : 'IT Duck'; ?></h3>
+                <p>Official website of <?php echo defined('SITE_NAME') ? SITE_NAME : 'IT Duck'; ?></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick links</h3>
+                <ul>
+                    <li><a href="<?php echo htmlspecialchars($baseurl); ?>">Home</a></li>
+                    <li><a href="<?php echo htmlspecialchars($baseurl); ?>about">About</a></li>
+                    <li><a href="<?php echo htmlspecialchars($baseurl); ?>contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p>Email: <?php echo defined('CONTACT_EMAIL') ? CONTACT_EMAIL : 'contact@example.com'; ?></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <?php echo date("Y"); ?> <?php echo defined('SITE_NAME') ? SITE_NAME : 'IT Duck'; ?>. All rights reserved.</p>
+            
+            <!-- Restored Theme Switcher Button -->
+            <div class="theme-switcher">
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <!-- Your icons for light/dark mode go here -->
+                </button>
+            </div>
         </div>
     </div>
 </footer>
 
-<!-- Main JavaScript file that handles general interactions -->
+<!-- Main JavaScript file -->
 <script nonce="<?php echo $csp_nonce; ?>" src="<?php echo htmlspecialchars($baseurl); ?>js/main.js"></script>
 
-<!-- Inline script for theme TOGGLE logic - CORRECTED and WITH NONCE -->
+<!-- Inline script for theme toggle logic - Nonced and Corrected -->
 <script nonce="<?php echo $csp_nonce; ?>">
     (function() {
         const themeToggle = document.getElementById('theme-toggle');
         
-        // This function handles the button click
         function handleThemeToggle() {
-            // Check if the light-mode class is currently present on the root <html> element
             const isLight = document.documentElement.classList.contains('light-mode');
             
             if (isLight) {
-                // If it's light, switch to dark
                 document.documentElement.classList.remove('light-mode');
                 localStorage.setItem('theme', 'dark');
             } else {
-                // If it's dark, switch to light
                 document.documentElement.classList.add('light-mode');
                 localStorage.setItem('theme', 'light');
             }
         }
 
-        // Add the click event listener to the button
         if(themeToggle) {
             themeToggle.addEventListener('click', handleThemeToggle);
         }

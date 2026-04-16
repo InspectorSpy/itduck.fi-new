@@ -1,34 +1,37 @@
 <?php
-// Include config if not already loaded
-if (!defined('BASE_URL')) {
+// Initialize config if not already done (for session and baseurl)
+if (session_status() === PHP_SESSION_NONE) {
     require_once __DIR__ . '/config.php';
 }
 
-// Include security headers (must be before any output)
+// Enforce security headers immediately
 require_once __DIR__ . '/security-headers.php';
-
-// Set default page title if not set
-if (!isset($page_title)) {
-    $page_title = SITE_NAME;
-}
 ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php echo isset($page_description) ? htmlspecialchars($page_description) : 'Welcome to ' . htmlspecialchars(SITE_NAME); ?>">
+    <title><?php echo isset($page_title) ?htmlspecialchars($page_title) : "IT Duck"; ?></title>
+</head>
 
-    <title><?php echo htmlspecialchars($page_title); ?></title>
+    <!-- Preconnect for performance -->
+     <link rel="preconnect" href="https://code.jquery.com">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="<?php echo htmlspecialchars($baseurl); ?>css/styles.css">
+    <!-- Stylesheets -->
+     <link rel="stylesheet" href="<?php echo htmlspecialchars($baseurl); ?>css/main.css">
+     <link rel="stylesheet" href="<?php echo htmlspecialchars($baseurl); ?>css/dark.css" media="(prefers-color-scheme: dark)">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?php echo htmlspecialchars($baseurl); ?>favicon.ico">
+    <link rel="icon" href="<?php echo htmlspecialchars($baseurl); ?>img/favicon-dark.svg" type="image/svg+xml">
 
-    <!-- jQuery (if needed): using CSP-approved CDN -->
-    <script
-        nonce="<?php echo htmlspecialchars($csp_nonce); ?>"
-        src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous"></script>
+    <!-- Critical theme persistence script - NOW WITH NONCE -->
+     <script nonce=""<?php echo $csp_nonce; ?>">
+        // IIFE to set theme immediately to prevent FOUC
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark-mode-loading');
+            }
+        })();
+     </script>"
 </head>

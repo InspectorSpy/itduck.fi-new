@@ -17,16 +17,16 @@ $is_frontpage = true;
         <div class="container">
 
             <!-- Hero Section -->
-             <section class="hero-section">
+<!--             <section class="hero-section">
                 <div class="hero-content">
                     <h2>Lorem Ipsum Dolor</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                     <a href="<?php echo htmlspecialchars($baseurl); ?>about" class="btn-primary">About</a>
                 </div>
-             </section>
+             </section> -->
 
             <!-- Features Section -->
-             <section class="features-section">
+<!--             <section class="features-section">
                 <h2>Lorem</h2>
                 <div class="features-grid">
                     <div class="feature-card">
@@ -46,7 +46,7 @@ $is_frontpage = true;
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                     </div>
                 </div>
-             </section>
+             </section> -->
         </div>
     </main>
 

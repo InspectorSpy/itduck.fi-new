@@ -50,4 +50,3 @@ if ($path === "/profile/favicon.ico" || $path === "/favicon.ico") {
 
 // Default: serve index
 require __DIR__ . "/index.php";
-

@@ -22,7 +22,7 @@ $header_title = "About";
                 <h2>About me</h2>
 
                 <h3>Studies & Background</h3>
-                <p>I'm a first year student in Information Technology in a University of Applied Sciences.</p>
+                <p>I'm a Information Technology student in a University of Applied Sciences.</p>
                 <p>My background is mostly in IT. I have a vocational qualification as an IT Support Person and relevant work experience in IT support. I possess a strong interest in cybersecurity, even though I'm still relatively new to that field.</p>
                 <p>Simply put, I'm a workaholic jack-of-all-trades.</p>
 

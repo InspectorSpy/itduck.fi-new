@@ -4,5 +4,40 @@
         "name": "test",
         "email": "test@testmail.org",
         "message": "This is a test message sent from the contact form on the site. Currently the message is saved to a messages.json file, this is only for development purposes."
+    },
+    {
+        "name": "test #2",
+        "email": "testmail@test.mail",
+        "message": "This this another test mail, sent from an android device.",
+        "timestamp": "2026-04-17 17:41:21",
+        "ip_address": "162.158.238.162"
+    },
+    {
+        "name": "Allen Bell",
+        "email": "allen.bell3456@gmail.com",
+        "message": "Hi,\r\n\r\nI checked your website and it looks visually strong, but there may be some gaps with indexing and recent Google algorithm updates. \r\n\r\nFixing these with proper SEO strategies can help improve rankings and bring more relevant traffic aligned with your business. Let me know if you&#39;d like a quick overview.\r\n\r\nRegards\r\n\r\nAlen",
+        "timestamp": "2026-05-09 00:47:11",
+        "ip_address": "162.158.22.207"
+    },
+    {
+        "name": "Peter Randall",
+        "email": "prandall10@protonmail.com",
+        "message": "Hello, \r\n \r\nI hope this message finds you well. \r\n \r\nMy name is Peter Randall, and I represent the Marketing Department at SMG Capital Inc., a Canada-based investment firm specializing in helping businesses grow and expand through capital investments. \r\n \r\nWe support businesses with Flexible business financing, Growth capital \r\ninvestment and Custom financing solutions that align with all \r\nstrategic business goals. \r\n \r\nAs part of our ongoing global expansion we are currently looking for \r\nserious business owners outside Canada and United States who are currently \r\nexploring funding options for business expansion for access to fast \r\ncapital. \r\n \r\nIf you are interested, please feel free to reach out to me at: \r\npetrandall@smgcapinc.com \r\n \r\nBest Regards \r\nPeter Randall",
+        "timestamp": "2026-05-12 22:52:19",
+        "ip_address": "172.71.164.4"
+    },
+    {
+        "name": "David Williams",
+        "email": "davidwilliams28798@gmail.com",
+        "message": "Hi,\r\n\r\nI recently came across your website and noticed a few areas where improvements could significantly enhance your visibility on Google.\r\n\r\nWith a well-planned SEO strategy, you can attract more relevant traffic, improve your search rankings, and generate higher-quality inquiries for your business.\r\n\r\nI\u2019d be glad to share insights on how we can strengthen your online presence, along with details of my SEO services and pricing.\r\n\r\nLet me know a convenient time to connect.\r\n\r\nRegards,\r\n\r\nDavid",
+        "timestamp": "2026-05-15 17:47:16",
+        "ip_address": "108.162.227.130"
+    },
+    {
+        "name": "Edward Smith",
+        "email": "edwardsmith076459@gmail.com",
+        "message": "Hi,\r\n\r\nI checked your website and found a few SEO improvements that can help increase your Google rankings and generate more quality leads.\r\n\r\nI can share a quick SEO proposal with pricing and a strategy tailored for your business growth.\r\n\r\nLet me know if you&#39;re interested.\r\n\r\nRegards,\r\n\r\nEdward",
+        "timestamp": "2026-05-26 21:03:47",
+        "ip_address": "108.162.227.129"
     }
 ]

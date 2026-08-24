@@ -80,7 +80,7 @@
 
 ## Security Enhancements
 
-- [ ] Change default password in `view-messages.php` (will probably be deleting this page.)
+- [x] Deleted `view-messages.php` (was insecure, hardcoded password). Real replacement planned as part of the React rebuild.
 - [x] Add CSRF protection to contact form
 - [x] Implement rate limiting on form submissions
 - [x] Add `.htaccess` or server config for security headers
@@ -117,9 +117,7 @@
 ## Notes
 
 - Site uses PHP with component architecture
-- Messages saved to:  `2026/data/messages.json`
-- "Admin" viewer:  `/2026/view-messages.php`
-- Current password: `notsecure` (Implementation is not a secure method!)
+- "Admin" viewer: removed (was `/2026/view-messages.php`, hardcoded password, no rate limiting). Replacement planned as part of the React rebuild with proper auth.
 - **Production URL**: https://itduck.fi
 - **Server**: Hetzner (Debian + Apache)
 - **Security**: CSP implemented with nonce-based inline script protection
@@ -147,9 +145,9 @@ ________________________________________________________________________________
 - **Files:** `contact.php`, `inc/config.php`
 
 #### 3. Fix/Delete Insecure Message Viewer
-- [ ] **Option A:** Delete `view-messages.php` (read via SSH:  `cat data/messages.json`)
-- [ ] **Option B:** Implement bcrypt passwords, rate limiting, CSRF, session timeout
-- **File:** `view-messages.php`
+- [x] Deleted `view-messages.php`. Real replacement (proper auth, reusing
+      the React rebuild's API layer) planned, not yet built.
+- **File:** was `view-messages.php`, now removed
 
 #### 4. Add Rate Limiting to Contact Form
 - [x] Track submissions per IP in session (max 5 per hour)

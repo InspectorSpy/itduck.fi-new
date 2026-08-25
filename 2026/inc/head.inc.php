@@ -5,6 +5,8 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 // Enforce security headers immediately
 require_once __DIR__ . '/security-headers.php';
+//* Vite build helper, used only by pages that set $vite_entry
+require_once __DIR__ . '/vite.inc.php';
 ?>
 <head>
     <meta charset="UTF-8">
@@ -32,4 +34,10 @@ require_once __DIR__ . '/security-headers.php';
             }
         })();
     </script>
+
+    <?php 
+    //* Include Vite tags for CSS and JS, only when the page sets $vite_entry
+    if (isset($vite_entry)): ?>
+        <?php echo vite_tags($vite_entry); ?>
+    <?php endif; ?>
 </head>

@@ -1,6 +1,7 @@
 <?php
 $current_navi_item = "contact";
 $page_title = "Contact - " . (defined("SITE_NAME") ? SITE_NAME : "IT Duck");
+$vite_entry = "src/main.jsx"; //* Specify the Vite entry point for this page
 
 // Ensure session is started for authentication
 if (session_status() === PHP_SESSION_NONE) {
@@ -94,6 +95,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div class="container">
             <section class="content-section text-center">
                 <h1>Contact Me</h1>
+                
+                <!-- Vite-->
+                <div id="root"></div>
+                
                 <p>Have a question in mind? Let's talk.</p>
 
                 <?php if ($message_sent): ?>

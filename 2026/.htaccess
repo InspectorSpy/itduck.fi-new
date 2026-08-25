@@ -14,27 +14,7 @@ Options -Indexes
     RewriteRule ^(.*)$ router-dev.php?url=$1 [QSA,L]
 </IfModule>
 
-# Security Headers - Backup configuration
-# Primary headers are set in inc/security-headers. php
-<IfModule mod_headers.c>
-    # Content Security Policy
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://code.jquery.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: ; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
-    
-    # Prevent clickjacking
-    Header always set X-Frame-Options "DENY"
-    
-    # Prevent MIME sniffing
-    Header always set X-Content-Type-Options "nosniff"
-    
-    # XSS Protection (legacy browsers)
-    Header always set X-XSS-Protection "1; mode=block"
-    
-    # Referrer Policy
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    
-    # Permissions Policy
-    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
-    
-    # HSTS - Force HTTPS
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-</IfModule>
+# Security headers are set in inc/security-headers.php (single source of
+# truth, supports CSP nonces) Do not duplicate them here, duplicate
+# CSP/HSTS headers are enforced as an intersection by browsers and will
+# silently break nonce-based inline scripts.

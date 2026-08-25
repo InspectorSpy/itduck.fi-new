@@ -1,0 +1,28 @@
+{
+  "src/assets/hero.png": {
+    "file": "assets/hero-CLDdwZDr.png",
+    "src": "src/assets/hero.png"
+  },
+  "src/assets/react.svg": {
+    "file": "assets/react-CHdo91hT.svg",
+    "src": "src/assets/react.svg"
+  },
+  "src/assets/vite.svg": {
+    "file": "assets/vite-BF8QNONU.svg",
+    "src": "src/assets/vite.svg"
+  },
+  "src/main.jsx": {
+    "file": "assets/contact-Bov3I2jf.js",
+    "name": "contact",
+    "src": "src/main.jsx",
+    "isEntry": true,
+    "css": [
+      "assets/contact-DykytF2W.css"
+    ],
+    "assets": [
+      "assets/hero-CLDdwZDr.png",
+      "assets/react-CHdo91hT.svg",
+      "assets/vite-BF8QNONU.svg"
+    ]
+  }
+}

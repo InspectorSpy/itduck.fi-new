@@ -1,11 +1,8 @@
 {
   "src/main.jsx": {
-    "file": "assets/contact-BvjZycRe.js",
+    "file": "assets/contact-C3-yH3Zp.js",
     "name": "contact",
     "src": "src/main.jsx",
-    "isEntry": true,
-    "css": [
-      "assets/contact-DykytF2W.css"
-    ]
+    "isEntry": true
   }
 }

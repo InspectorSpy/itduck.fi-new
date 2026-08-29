@@ -19,9 +19,9 @@ require_once __DIR__ . '/vite.inc.php';
     <!-- Correctly link the single stylesheet -->
     <link rel="stylesheet" href="<?php echo htmlspecialchars($baseurl); ?>css/styles.css">
     <link rel="stylesheet" href="<?php echo htmlspecialchars($baseurl); ?>css/light-mode.css">
-    
+
     <!-- Favicon -->
-    <link rel="icon" href="<?php echo htmlspecialchars($baseurl); ?>img/favicon-dark.svg" type="image/svg+xml">
+    <link rel="icon" href="<?php echo htmlspecialchars($baseurl); ?>favicon.ico" type="image/x-icon">
 
     <!-- Critical theme persistence script - NOW CORRECTED and WITH NONCE -->
     <script nonce="<?php echo $csp_nonce; ?>">
@@ -35,7 +35,7 @@ require_once __DIR__ . '/vite.inc.php';
         })();
     </script>
 
-    <?php 
+    <?php
     //* Include Vite tags for CSS and JS, only when the page sets $vite_entry
     if (isset($vite_entry)): ?>
         <?php echo vite_tags($vite_entry); ?>

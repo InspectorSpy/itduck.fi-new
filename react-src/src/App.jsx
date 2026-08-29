@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 
 // Contact form component
 function App() {

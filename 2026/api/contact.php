@@ -86,15 +86,15 @@ $_SESSION['form_submissions'][] = $current_time;
 $mail = new PHPMailer(true);
 try {
     $mail->isSMTP();
-    $mail->Host = 'smtp.protonmail.ch';
+    $mail->Host = $_ENV['SMTP_HOST'] ?? 'smtp.protonmail.ch';
     $mail->SMTPAuth = true;
-    $mail->Username = $_ENV['PROTON_SMTP_USER'];
-    $mail->Password = $_ENV['PROTON_SMTP_TOKEN'];
+    $mail->Username = $_ENV['SMTP_USER'];
+    $mail->Password = $_ENV['SMTP_TOKEN'];
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->setFrom($_ENV['PROTON_SMTP_USER'], 'itduck.fi Contact Form');
-    $mail->addAddress($_ENV['PROTON_SMTP_USER']); // Send to itself
+    $mail->setFrom($_ENV['SMTP_USER'], 'itduck.fi Contact Form');
+    $mail->addAddress($_ENV['SMTP_USER']); // Send to itself
     $mail->addReplyTo($email, $name);
 
     $mail->Subject = "New contact form message from {$name}";

@@ -17,7 +17,7 @@
 
             <div class="footer-section">
                 <h3>Connect</h3>
-                <p>Email: <?php echo defined('CONTACT_EMAIL') ? CONTACT_EMAIL : 'contact@example.com'; ?></p>
+                <p>Email: <?php echo defined('CONTACT_EMAIL') ? CONTACT_EMAIL : 'contact@itduck.fi'; ?></p>
             </div>
         </div>
 

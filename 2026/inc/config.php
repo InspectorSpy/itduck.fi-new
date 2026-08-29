@@ -1,4 +1,9 @@
 <?php
+// Load environment variables (.env, kept outside git and outside docroot)
+require_once __DIR__ . '/../../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../..');
+$dotenv->safeLoad();
+
 // Site configuration
 define('SITE_NAME', 'IT Duck');
 define('BASE_URL','/');

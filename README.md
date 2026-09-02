@@ -75,16 +75,12 @@ cp .env.example .env    # then fill in real values, see below
 
 `.env` needs:
 ```
-SMTP_HOST=smtp.protonmail.ch
-SMTP_USER=contact@yourdomain
-SMTP_TOKEN=your_smtp_token
+SMTP_HOST=smtp.example.com
+SMTP_USER=your_smtp_username
+SMTP_TOKEN=your_smtp_password_or_token
 ```
 
-(These examples use Proton's SMTP submission, which requires a paid
-plan and a per-address SMTP token generated under Mail → SMTP
-submission, not your account password. Any SMTP provider works here,
-just set SMTP_HOST, SMTP_USER, and SMTP_TOKEN to match your
-provider's values.)
+Any SMTP provider works here, just set SMTP_HOST, SMTP_USER, and SMTP_TOKEN to match your provider's values.
 
 ## Development
 

@@ -39,33 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Form validation (basic example)
-    const contactForm = document.querySelector(".contact-form");
-    if (contactForm) {
-        contactForm.addEventListener("submit", function(e) {
-
-            // Get form values
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
-
-            // Basic validation
-            if (name === "" || email === "" || message === "") {
-                e.preventDefault();
-                alert("Please fill in all fields.");
-                return false;
-            }
-
-            // Email validation
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                e.preventDefault();
-                alert("Please enter a valid email address.");
-                return false;
-            }     
-        });
-    }
-
     // Add fade-in animation for content sections
     const observerOptions = {
         threshold: 0.1,
@@ -88,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
         section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
         observer.observe(section);
     });
-        
+
 });
 
 // Console welcome message

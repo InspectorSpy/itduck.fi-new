@@ -1,7 +1,7 @@
-<?php 
+<?php
 /**
  * Security headers configuration
- * 
+ *
  * Implements Content Security Policy (CSP) and other security headers
  * to protect against XSS, clickjacking, and injection attacks.
  */
@@ -23,8 +23,8 @@ $csp_directives = [
     // Default fallback: only allow resources from same origin
     "default-src 'self'",
 
-    // Scripts: Allow own scripts, JQuery CDN, and nonce-based inline scripts
-    "script-src 'self' https://code.jquery.com 'nonce-{$csp_nonce}'",
+    // Scripts: Allow own scripts and nonce-based inline scripts
+    "script-src 'self' 'nonce-{$csp_nonce}'",
 
     // Styles: Allow own stylesheets and nonce-based inline styles
     "style-src 'self' 'nonce-{$csp_nonce}'",
@@ -93,7 +93,7 @@ header("Permissions-Policy: " . implode(", ", $permissions_policy));
 // Force HTTPS for 1 year (31536000 seconds)
 // Only enable this if your site is fully HTTPS!
 if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
-    header("Strict-Transport-Security:  max-age=31536000; includeSubDomains; preload");
+    header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
 }
 
 ?>

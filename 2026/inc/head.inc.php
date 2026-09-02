@@ -13,9 +13,6 @@ require_once __DIR__ . '/vite.inc.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($page_title) ? htmlspecialchars($page_title) : "IT Duck"; ?></title>
 
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://code.jquery.com">
-
     <!-- Correctly link the single stylesheet -->
     <link rel="stylesheet" href="<?php echo htmlspecialchars($baseurl); ?>css/styles.css">
     <link rel="stylesheet" href="<?php echo htmlspecialchars($baseurl); ?>css/light-mode.css">

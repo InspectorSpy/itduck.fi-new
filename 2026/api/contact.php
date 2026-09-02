@@ -66,10 +66,28 @@ if (count($_SESSION['form_submissions']) >= $max_submissions) {
 }
 
 // Read and validate the JSON body
-$body = json_decode(file_get_contents('php://input'), true);
+$raw = file_get_contents('php://input') ?: '';
+
+// Small body size guard (10 KiB), well under a normal message
+if (strlen($raw) > 10 * 1024) {
+    http_response_code(413);
+    respond(false, 'Payload too large.');
+}
+
+$body = json_decode($raw, true);
+if ($raw !== '' && !is_array($body)) {
+    http_response_code(400);
+    respond(false, 'Malformed JSON.');
+}
+
 $name = trim($body['name'] ?? '');
 $email = trim($body['email'] ?? '');
 $message = trim($body['message'] ?? '');
+
+// Basic length caps to avoid excessively large submissions
+if (strlen($name) > 200 || strlen($email) > 254 || strlen($message) > 5000) {
+    respond(false, 'Input values are too long.');
+}
 
 // Validate input
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

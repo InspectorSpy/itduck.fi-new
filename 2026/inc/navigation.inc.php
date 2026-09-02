@@ -12,34 +12,34 @@ if (!isset($current_navi_item)) {
                 <span><?php echo SITE_NAME; ?></span>
             </a>
         </div>
-        
+
         <button class="mobile-menu-toggle" aria-label="Toggle menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
-        
+
         <ul class="nav-menu">
             <li>
-                <a href="<?php echo $baseurl; ?>" 
+                <a href="<?php echo $baseurl; ?>"
                    class="<?php echo ($current_navi_item == 'home') ? 'active' : ''; ?>">
                     Home
                 </a>
             </li>
             <li>
-                <a href="<?php echo $baseurl; ?>about" 
+                <a href="<?php echo $baseurl; ?>about"
                    class="<?php echo ($current_navi_item == 'about') ? 'active' : ''; ?>">
                     About
                 </a>
             </li>
             <li>
-                <a href="<?php echo $baseurl; ?>Projects" 
+                <a href="<?php echo $baseurl; ?>projects"
                    class="<?php echo ($current_navi_item == 'projects') ? 'active' : ''; ?>">
                     Projects
                 </a>
             </li>
             <li>
-                <a href="<?php echo $baseurl; ?>contact" 
+                <a href="<?php echo $baseurl; ?>contact"
                    class="<?php echo ($current_navi_item == 'contact') ? 'active' : ''; ?>">
                     Contact
                 </a>

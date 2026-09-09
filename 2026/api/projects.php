@@ -38,6 +38,7 @@ if (is_file($cache_file) && (time() - filemtime($cache_file)) < $cache_ttl) {
 $token = $_ENV['GITHUB_TOKEN'] ?? '';
 $result = [];
 
+// Fetch data for each repo from GitHub API
 foreach ($repos as $repo) {
     $context = stream_context_create([
         'http' => [
@@ -51,16 +52,19 @@ foreach ($repos as $repo) {
         ],
     ]);
 
+    // Fetch repo data from GitHub API
     $response = @file_get_contents("https://api.github.com/repos/{$repo}", false, $context);
     if ($response === false) {
         continue; // skip this repo on failure, don't fail the whole request
     }
 
+    // Decode JSON response and check for errors
     $data = json_decode($response, true);
     if (!is_array($data) || isset($data['message'])) {
         continue; // GitHub returned an error (rate limit, not found, etc.)
     }
 
+    // Extract relevant fields and store in result
     $result[$repo] = [
         'name' => $data['name'] ?? $repo,
         'description' => $data['description'] ?? '',
@@ -71,6 +75,7 @@ foreach ($repos as $repo) {
     ];
 }
 
+// If we got no valid data from GitHub, respond with an error
 if (empty($result)) {
     // GitHub was unreachable / errored for every repo, and cache was
     // stale/missing, nothing to serve

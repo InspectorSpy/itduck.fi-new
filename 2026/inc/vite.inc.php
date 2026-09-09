@@ -14,6 +14,15 @@ function vite_tags(string $entry = 'index.html'): string {
     foreach ($chunk['css'] ?? [] as $css) {
         $out .= '<link rel="stylesheet" href="' . htmlspecialchars($base . $css) . '">' . "\n";
     }
+    // Preload any shared chunks this entry depends on (e.g. the React
+    // JSX runtime shared between contact and projects), so the browser
+    // starts fetching them immediately instead of discovering the
+    // dependency only after parsing the entry script.
+    foreach ($chunk['imports'] ?? [] as $import) {
+        if (isset($manifest[$import]['file'])) {
+            $out .= '<link rel="modulepreload" href="' . htmlspecialchars($base . $manifest[$import]['file']) . '">' . "\n";
+        }
+    }
     $out .= '<script type="module" src="' . htmlspecialchars($base . $chunk['file']) . '"></script>';
     return $out;
 }

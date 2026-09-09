@@ -12,7 +12,8 @@ export default defineConfig({
     manifest: 'manifest.json',
     rollupOptions: {
       input: {
-        contact: resolve(import.meta.dirname, 'src/main.jsx'),
+          contact: resolve(import.meta.dirname, 'src/contact/main.jsx'),
+          projects: resolve(import.meta.dirname, 'src/projects/main.jsx'),
       },
     },
   },

@@ -1,7 +1,7 @@
 <?php
 $current_navi_item = "contact";
 $page_title = "Contact - " . (defined("SITE_NAME") ? SITE_NAME : "IT Duck");
-$vite_entry = "src/main.jsx"; //* Specify the Vite entry point for this page
+$vite_entry = "src/contact/main.jsx"; //* Specify the Vite entry point for this page
 
 // Ensure session is started for authentication
 if (session_status() === PHP_SESSION_NONE) {

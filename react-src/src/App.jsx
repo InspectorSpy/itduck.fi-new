@@ -52,7 +52,7 @@ function App() {
     async function handleSubmit(e) {
         // Estää selaimen oletustoiminnon (sivun uudelleenlataus ja navigointi),
         // koska haluamme lähettää datan taustalla
-        // ja pysyä samalla sivulla.
+        // ja pysyä samalla sivulla
         e.preventDefault()
 
         // Päivitetään tila heti "sending"-tilaan, tämä on se mikä

@@ -21,8 +21,9 @@ node_modules/
 *.tmp
 *.cache
 
-2026/data/messages.json
 2026/data/
+2026/data/messages.json
+2026/data/github-cache.json
 
 CLAUDE.local.md
 .claude/

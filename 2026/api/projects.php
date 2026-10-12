@@ -22,7 +22,7 @@ function respond(bool $success, $data = null, string $error = ''): void {
 }
 
 // GitHub API configuration
-$repos = ['InspectorSpy/home-server', 'InspectorSpy/KaliaBot'];
+$repos = ['InspectorSpy/home-server', 'InspectorSpy/KaliaBot', 'InspectorSpy/ATM-Simulator'];
 $cache_file = __DIR__ . '/../data/github-cache.json';
 $cache_ttl = 3600; // 1 hour
 
